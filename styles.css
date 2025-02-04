@@ -1,27 +1,149 @@
-.calsi {
-    margin-top: 4%;
-    margin-left: 40%;
-    width: 250px;
-    background-color: rgb(4, 4, 4);
-    border-radius: 5px;
-    padding: 15px;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
     display: flex;
-    flex-wrap: wrap;
-}
-h1 {
-    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-#display {
+/* Calculator Container */
+.calculator {
+    background: #222;
+    border-radius: 16px;
     width: 100%;
-    padding: 7px;
-    margin-bottom: 10px;
+    max-width: 360px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Display Section */
+.display {
+    background: #111;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+#screen {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    text-align: right;
+    padding: 10px;
+    outline: none;
+}
+
+/* Button Styles */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* General Button Styling */
+button {
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #444;
+    transform: scale(1.1);
+}
+
+/* Operator Buttons */
+.operator {
+    background-color: #f44336;
+}
+
+.operator:hover {
+    background-color: #d32f2f;
+}
+
+/* Equals Button */
+.equals {
+    background-color: #4caf50;
+    color: #fff;
+    grid-column: span 2;
+}
+
+.equals:hover {
+    background-color: #388e3c;
+}
+
+/* Clear and Delete Button */
 .btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 0;
-    margin-bottom: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 1.4em;
+}
+
+.btn:hover {
+    background-color: #444;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .calculator {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #screen {
+        font-size: 1.8em;
+    }
+
+    button {
+        font-size: 1.3em;
+        padding: 15px;
+    }
+
+    .equals {
+        font-size: 1.5em;
+        padding: 18px;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 85%;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    .equals {
+        font-size: 1.4em;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
 }

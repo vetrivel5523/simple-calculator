@@ -1,13 +1,22 @@
-function displayvalue(value) {
-    document.getElementById("display").value =  document.getElementById("display").value + value;
-}
-function clearDisplay() {
-    document.getElementById("display").value="";
-}
-function calculate () {
-    document.getElementById('display').value;
-    var userInput = document.getElementById('display').value;
-    var result = eval(userInput);
+let screen = document.getElementById('screen');
 
-    document.getElementById('display').value = result;
+function clearScreen() {
+    screen.value = '';
+}
+
+function deleteLast() {
+    screen.value = screen.value.slice(0, -1);
+}
+
+function appendToScreen(value) {
+    screen.value += value;
+}
+
+function calculate() {
+    try {
+        screen.value = eval(screen.value);
+    } catch (e) {
+        screen.value = 'Error';
+        setTimeout(clearScreen, 1500);  // Clear screen after showing "Error"
+    }
 }
